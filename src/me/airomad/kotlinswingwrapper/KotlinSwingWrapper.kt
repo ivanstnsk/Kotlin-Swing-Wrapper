@@ -103,3 +103,10 @@ operator fun Insets.plus(other: Insets): Insets {
     left += other.left
     return this
 }
+
+open class KSWComponent {
+    fun set(block: () -> Unit) : KSWComponent {
+        block()
+        return this
+    }
+}
