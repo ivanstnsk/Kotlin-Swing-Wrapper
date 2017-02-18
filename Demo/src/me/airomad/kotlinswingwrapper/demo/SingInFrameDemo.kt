@@ -1,9 +1,7 @@
 package me.airomad.kotlinswingwrapper.demo
 
-import me.airomad.kotlinswingwrapper.Row
 import me.airomad.kotlinswingwrapper.frame
 import me.airomad.kotlinswingwrapper.panel
-import java.awt.GridBagConstraints
 import javax.swing.JButton
 import javax.swing.JLabel
 import javax.swing.JTextField
@@ -29,59 +27,75 @@ fun signInFrame() {
         onClose { EXIT_ON_CLOSE }
         add {
             panel {
-                debug = true
                 row {
-                    Row.cell {
+                    cell {
                         add { JLabel("Login: Jon | Password: Snow") }
-                        init {
-                            gridwidth = 2
-                            anchor = GridBagConstraints.CENTER
-                            insets.bottom = 10
+                        grid {
+                            size { 2 AND 1 }
+                            align { CENTER }
+                            padding {
+                                bottom { 10 }
+                            }
                         }
                     }
                 }
                 row {
-                    Row.cell {
+                    cell {
                         add { statusLabel }
-                        init {
-                            gridwidth = 2
-                            anchor = GridBagConstraints.CENTER
-                            insets.bottom = 10
+                        grid {
+                            size { 2 AND 1 }
+                            align { CENTER }
+                            padding {
+                                bottom { 10 }
+                            }
                         }
                     }
                 }
                 row {
-                    Row.cell {
+                    cell {
                         add { JLabel("Login: ") }
-                        init {
-                            fill = GridBagConstraints.BOTH
-                            insets.bottom = 5
+                        grid {
+                            align { CENTER }
+                            fill { BOTH }
+                            padding {
+                                bottom { 5 }
+                            }
                         }
                     }
-                    Row.cell {
+                    cell {
                         add {
                             loginField.apply { columns = 20 }
                         }
-                        init { insets.bottom = 5 }
+                        grid {
+                            padding {
+                                bottom { 5 }
+                            }
+                        }
                     }
                 }
                 row {
-                    Row.cell {
+                    cell {
                         add { JLabel("Password: ") }
-                        init {
-                            fill = GridBagConstraints.BOTH
-                            insets.bottom = 15
+                        grid {
+                            fill { BOTH }
+                            padding {
+                                bottom { 15 }
+                            }
                         }
                     }
-                    Row.cell {
+                    cell {
                         add {
                             passwordField.apply { columns = 20 }
                         }
-                        init { insets.bottom = 15 }
+                        grid {
+                            padding {
+                                bottom { 15 }
+                            }
+                        }
                     }
                 }
                 row {
-                    Row.cell {
+                    cell {
                         add {
                             JButton("Sing in").apply {
                                 addActionListener {
@@ -92,9 +106,9 @@ fun signInFrame() {
                                 }
                             }
                         }
-                        init {
-                            gridwidth = 2
-                            anchor = GridBagConstraints.CENTER
+                        grid {
+                            size { 2 AND 1 }
+                            align { CENTER }
                         }
                     }
                 }

@@ -12,11 +12,9 @@ import javax.swing.JPanel
 
 val DEBUG_BORDER = BorderFactory.createLineBorder(Color.RED)
 
-fun panel(init: Panel.() -> Unit): Panel {
-    return Panel().apply { init() }
-}
 
-class Panel : JPanel() {
+
+/*class Panel1 : JPanel() {
     var gbc: GridBagConstraints = GridBagConstraints()
     var debug: Boolean = false
         set(value) {
@@ -68,7 +66,7 @@ fun Panel.addComponent(component: JComponent?) {
     }
     gbc.nextCell()
     gbc.clear()
-}
+}*/
 
 fun GridBagConstraints.nextRow() {
     gridx = 0

@@ -3,7 +3,6 @@ package me.airomad.kotlinswingwrapper.demo
 import me.airomad.kotlinswingwrapper.frame
 import me.airomad.kotlinswingwrapper.panel
 import me.airomad.kotlinswingwrapper.splitpane
-import java.awt.GridBagConstraints
 import javax.swing.JLabel
 
 /**
@@ -22,14 +21,15 @@ fun twoPanelsFrame() {
             splitpane {
                 left {
                     panel {
-                        debug = true
                         row {
                             cell {
                                 add { JLabel("First panel") }
-                                init {
-                                    anchor = GridBagConstraints.CENTER
-                                    insets.top = 100
-                                    insets.bottom = 100
+                                grid {
+                                    align { CENTER }
+                                    padding {
+                                        top { 100 }
+                                        bottom { 100 }
+                                    }
                                 }
                             }
                         }
@@ -37,14 +37,15 @@ fun twoPanelsFrame() {
                 }
                 right {
                     panel {
-                        debug = true
                         row {
                             cell {
                                 add { JLabel("Second panel") }
-                                init {
-                                    anchor = GridBagConstraints.CENTER
-                                    insets.top = 100
-                                    insets.bottom = 100
+                                grid {
+                                    align { CENTER }
+                                    padding {
+                                        top { 100 }
+                                        bottom { 100 }
+                                    }
                                 }
                             }
                         }

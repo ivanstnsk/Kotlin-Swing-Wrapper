@@ -5,21 +5,21 @@ import javax.swing.JSplitPane
 
 /**
  * Created by Airomad on 18.02.2017.
- * SplitPane
+ * KSW SplitPane
  */
 
-fun splitpane(block: SplitPane.() -> Unit): JSplitPane {
-    return SplitPane.apply { block() }.component
+fun splitpane(block: KSWSplitPane.() -> Unit): JSplitPane {
+    return KSWSplitPane.apply { block() }.component
 }
 
-object SplitPane : KSWComponent() {
+object KSWSplitPane : KSWComponent() {
     lateinit var component: JSplitPane
 
     fun divider(block: Divider.() -> KSWComponent) = Divider.block()
     fun left(value: () -> JComponent) = set { component.leftComponent = value() }
     fun right(value: () -> JComponent) = set { component.rightComponent = value() }
 
-    fun apply(block: SplitPane.() -> Unit) : SplitPane {
+    fun apply(block: KSWSplitPane.() -> Unit) : KSWSplitPane {
         component = JSplitPane()
         this.block()
         return this
